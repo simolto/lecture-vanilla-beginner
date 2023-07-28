@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        background-color: black;
+        text-align: center;
+      }
+
+      button {
+        font-size: 24px;
+        background-color: tomato;
+        color: white;
+        cursor: pointer;
+      }
+
+      img {
+        display: block;
+        margin: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <button>Find a rabbit 🐇</button>
+
+    <script>
+      function createElements() {
+        const items = Array.from({ length: 9 }, () => {
+          const img = document.createElement('img')
+          img.setAttribute('src', 'imgs/carrot.png')
+          img.setAttribute('alt', 'carrot')
+          return img
+        })
+        const rabbit = document.createElement('img')
+        rabbit.setAttribute('src', 'imgs/rabbit.png')
+        rabbit.setAttribute('alt', 'rabbit')
+        rabbit.setAttribute('id', 'rabbit')
+
+        const randomIndex = Math.floor(Math.random() * items.length)
+        items.splice(randomIndex, 0, rabbit)
+        return items
+      }
+
+      function onClickBtn() {
+        const rabbit = document.getElementById('rabbit')
+        rabbit.scrollIntoView({
+          behavior: 'smooth',
+          block: 'center',
+        })
+      }
+
+      function loadItems() {
+        const body = document.querySelector('body')
+        body.append(...createElements())
+      }
+
+      window.addEventListener('load', () => {
+        loadItems()
+
+        const btn = document.querySelector('button')
+        btn.addEventListener('click', onClickBtn)
+      })
+    </script>
+  </body>
+</html>
