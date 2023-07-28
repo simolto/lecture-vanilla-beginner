@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        background-color: black;
+      }
+
+      nav {
+        position: fixed;
+        right: 8px;
+      }
+
+      div {
+        width: 150px;
+        height: 150px;
+        background-color: lightgrey;
+        border-radius: 2px;
+        margin-bottom: 4px;
+      }
+
+      div.pink {
+        background-color: lightpink;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <button class="scroll-by">scroll by 100px(y)</button>
+      <button class="scroll-to">scroll to 100px(y)</button>
+      <button class="scroll-into">scroll into pink(y)</button>
+    </nav>
+
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div class="pink"></div>
+    <div></div>
+    <div></div>
+    <div></div>
+
+    <script>
+      function onDivClick(div, e) {
+        console.log(div.getBoundingClientRect())
+        console.log(`client: ${e.clientX}, ${e.clientY}`)
+        console.log(`page: ${e.pageX}, ${e.pageY}`)
+      }
+
+      function onButtonClick(div, e) {
+        const behavior = 'smooth'
+
+        switch (event.target.classList[0]) {
+          case 'scroll-by':
+            window.scrollBy({ top: 100, behavior })
+            break
+          case 'scroll-to':
+            window.scrollTo({ top: 100, behavior })
+            break
+          case 'scroll-into':
+            div.scrollIntoView({ behavior })
+            break
+          default:
+            break
+        }
+      }
+
+      function setEventListeners() {
+        const div = document.querySelector('.pink')
+        const nav = document.querySelector('nav')
+
+        div.addEventListener('click', e => onDivClick(div, e))
+        nav.addEventListener('click', e => onButtonClick(div, e))
+      }
+      setEventListeners()
+    </script>
+  </body>
+</html>

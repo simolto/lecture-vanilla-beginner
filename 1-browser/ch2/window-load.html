@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script defer>
+      console.log('defer')
+    </script>
+  </head>
+  <body>
+    <script>
+      /* HTML(parsing) 완료 시 호출 */
+      window.addEventListener('DOMContentLoaded', () => {
+        console.log('DOMContentLoaded')
+      })
+
+      /* 모든 리소스(css, images) 완료 시 호출 */
+      window.addEventListener('load', () => {
+        console.log('load')
+      })
+
+      /* 페이지에서 나가기(새로고침 등) 전 호출 */
+      window.addEventListener('beforeunload', () => {
+        console.log('load')
+      })
+
+      /* 리소스 미완료 시 호출 */
+      window.addEventListener('unload', () => {
+        console.log('load')
+      })
+
+      // 개발자 도구-콘솔 탭-톱니바퀴 모양 클릭 ➡ '로그 보존' 클릭하여 로그 순서를 확인해 볼 것
+    </script>
+  </body>
+</html>
