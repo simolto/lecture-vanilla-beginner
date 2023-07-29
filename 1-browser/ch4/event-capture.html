@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      .outer {
+        width: 500px;
+        height: 500px;
+        background-color: yellow;
+      }
+
+      .inner {
+        background-color: thistle;
+        width: 50%;
+        height: 50%;
+        position: relative;
+        margin: auto;
+        transform: translateY(50%);
+      }
+
+      button {
+        position: relative;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="outer">
+      <div class="inner">
+        <button>click me</button>
+      </div>
+    </div>
+
+    <script>
+      const outer = document.querySelector('.outer')
+      const inner = document.querySelector('.inner')
+      const btn = document.querySelector('button')
+
+      // 나쁜 예제
+      function bad() {
+        outer.addEventListener('click', event => {
+          console.log(`outer: ${event.currentTarget}, ${event.target}`)
+        })
+
+        inner.addEventListener('click', event => {
+          console.log(`inner: ${event.currentTarget}, ${event.target}`)
+        })
+
+        btn.addEventListener('click', event => {
+          console.log(`button: ${event.currentTarget}, ${event.target}`)
+          event.stopPropagation() // bad
+          event.stopImmediatePropagation() // bad
+        })
+      }
+
+      // 좋은 예제
+      function cool() {
+        outer.addEventListener('click', event => {
+          if (event.target !== event.currentTarget) return // cool
+          console.log(`outer: ${event.currentTarget}, ${event.target}`)
+        })
+
+        inner.addEventListener('click', event => {
+          if (event.target !== event.currentTarget) return // cool
+          console.log(`inner: ${event.currentTarget}, ${event.target}`)
+        })
+
+        btn.addEventListener('click', event => {
+          console.log(`button: ${event.currentTarget}, ${event.target}`)
+        })
+      }
+      // target: 현재 클릭된 요소
+      // currentTarget: 클릭이 된 이벤트를 처리 하고 있는, 즉 이벤트 리스너가 등록되어 있는 요소
+    </script>
+  </body>
+</html>
