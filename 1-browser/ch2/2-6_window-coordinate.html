@@ -16,13 +16,13 @@
       div {
         width: 150px;
         height: 150px;
-        background-color: lightgrey;
+        background-color: lightyellow;
         border-radius: 2px;
         margin-bottom: 4px;
       }
 
       div.pink {
-        background-color: lightpink;
+        background-color: lightsalmon;
       }
     </style>
   </head>
@@ -45,24 +45,24 @@
     <div></div>
 
     <script>
-      function onDivClick(div, e) {
-        console.log(div.getBoundingClientRect())
+      function onClickPink(el, e) {
+        console.log(el.getBoundingClientRect())
         console.log(`client: ${e.clientX}, ${e.clientY}`)
         console.log(`page: ${e.pageX}, ${e.pageY}`)
       }
 
-      function onButtonClick(div, e) {
-        const behavior = 'smooth'
+      function onClickButton(el) {
+        const options = { top: 100, behavior: 'smooth' }
 
         switch (event.target.classList[0]) {
           case 'scroll-by':
-            window.scrollBy({ top: 100, behavior })
+            window.scrollBy(options)
             break
           case 'scroll-to':
-            window.scrollTo({ top: 100, behavior })
+            window.scrollTo(options)
             break
           case 'scroll-into':
-            div.scrollIntoView({ behavior })
+            el.scrollIntoView({ behavior: options.behavior })
             break
           default:
             break
@@ -70,13 +70,14 @@
       }
 
       function setEventListeners() {
-        const div = document.querySelector('.pink')
+        const pink = document.querySelector('.pink')
         const nav = document.querySelector('nav')
 
-        div.addEventListener('click', e => onDivClick(div, e))
-        nav.addEventListener('click', e => onButtonClick(div, e))
+        pink.addEventListener('click', () => onClickPink(pink))
+        nav.addEventListener('click', () => onClickButton(pink))
       }
-      setEventListeners()
+
+      document.addEventListener('DOMContentLoaded', () => setEventListeners())
     </script>
   </body>
 </html>
