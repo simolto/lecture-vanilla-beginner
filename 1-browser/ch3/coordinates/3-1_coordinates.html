@@ -39,21 +39,23 @@
     </style>
   </head>
   <body>
-    <img src="imgs/coordinate_target.png" alt="target" class="target" />
+    <img src="imgs/target.png" alt="target" class="target" />
     <div class="horizontal"></div>
     <div class="vertical"></div>
 
     <script>
-      const target = document.querySelector('.target')
-      const horizontal = document.querySelector('.horizontal')
-      const vertical = document.querySelector('.vertical')
+      function onMouseMove() {
+        const horizontal = document.querySelector('.horizontal')
+        const vertical = document.querySelector('.vertical')
+        const target = document.querySelector('.target')
 
-      window.addEventListener('mousemove', e => {
-        target.style.top = `${e.clientY}px`
-        target.style.left = `${e.clientX}px`
-        horizontal.style.top = `${e.clientY}px`
-        vertical.style.left = `${e.clientX}px`
-      })
+        target.style.top = `${event.clientY}px`
+        target.style.left = `${event.clientX}px`
+        horizontal.style.top = `${event.clientY}px`
+        vertical.style.left = `${event.clientX}px`
+      }
+
+      window.addEventListener('mousemove', onMouseMove)
     </script>
   </body>
 </html>
