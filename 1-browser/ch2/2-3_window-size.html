@@ -11,24 +11,21 @@
       }
     </style>
   </head>
-
   <body>
     <div class="wrapper"></div>
 
     <script>
       function onResize() {
-        const div = document.querySelector('.wrapper')
-        div.innerHTML = `
+        const wrapper = document.querySelector('.wrapper')
+        wrapper.innerHTML = `
           window.screen: ${window.screen.width}, ${window.screen.height}<br />
           window.outer: ${window.outerWidth}, ${window.outerHeight}<br />
           window.inner: ${window.innerWidth}, ${window.innerHeight}<br />
           documentElement.clientWidth: ${document.documentElement.clientWidth}, ${document.documentElement.clientHeight}`
       }
 
-      onResize()
+      window.addEventListener('DOMContentLoaded', () => onResize())
       window.addEventListener('resize', () => onResize())
     </script>
   </body>
 </html>
-
-coordinate
