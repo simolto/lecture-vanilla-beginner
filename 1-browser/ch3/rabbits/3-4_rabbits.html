@@ -44,6 +44,11 @@
         return items
       }
 
+      function displayItems() {
+        const body = document.querySelector('body')
+        body.append(...createElements())
+      }
+
       function onClickBtn() {
         const rabbit = document.getElementById('rabbit')
         rabbit.scrollIntoView({
@@ -52,16 +57,14 @@
         })
       }
 
-      function loadItems() {
-        const body = document.querySelector('body')
-        body.append(...createElements())
-      }
-
-      window.addEventListener('load', () => {
-        loadItems()
-
+      function setEventListeners() {
         const btn = document.querySelector('button')
         btn.addEventListener('click', onClickBtn)
+      }
+
+      window.addEventListener('DOMContentLoaded', () => {
+        displayItems()
+        setEventListeners()
       })
     </script>
   </body>
