@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        height: 100vh;
+        margin: 0;
+        background-color: black;
+      }
+
+      img,
+      div {
+        position: absolute;
+      }
+
+      div {
+        background-color: white;
+      }
+
+      .target {
+        /* top: 50%; */
+        /* left: 50%; */
+        /* transform: translate(-50%, -50%); */
+      }
+
+      .horizontal {
+        width: 100%;
+        height: 1px;
+        /* top: 50%; */
+      }
+
+      .vertical {
+        width: 1px;
+        height: 100%;
+        /* left: 50%; */
+      }
+    </style>
+  </head>
+  <body>
+    <img src="../ch3/coordinates/imgs/target.png" alt="target" class="target" />
+    <div class="horizontal">horizontal</div>
+    <div class="vertical">vertical</div>
+
+    <script>
+      function onMouseMove() {
+        const target = document.querySelector('.target')
+        const horizontal = document.querySelector('.horizontal')
+        const vertical = document.querySelector('.vertical')
+        const rect = target.getBoundingClientRect()
+        const targeHalfWidth = rect.width / 2
+        const targeHalfHeight = rect.height / 2
+
+        target.style.transform = `translate(${
+          event.clientX - targeHalfWidth
+        }px, ${event.clientY - targeHalfHeight}px)`
+        horizontal.style.transform = `translateY(${event.clientY}px)`
+        vertical.style.transform = `translateX(${event.clientX}px)`
+      }
+
+      document.addEventListener('mousemove', onMouseMove)
+    </script>
+  </body>
+</html>
