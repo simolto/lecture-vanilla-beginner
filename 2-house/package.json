@@ -1,0 +1,23 @@
+{
+  "name": "tomorrow-house",
+  "version": "1.0.0",
+  "description": "today's house clone project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "node-sass": "node-sass -wr styles/main.scss style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/simolto/lecture-vanilla-beginner.git"
+  },
+  "author": "simolto <simoltobella@gmail.com> (https://github.com/simolto)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/simolto/lecture-vanilla-beginner/issues"
+  },
+  "homepage": "https://github.com/simolto/lecture-vanilla-beginner#readme",
+  "devDependencies": {
+    "node-sass": "^9.0.0"
+  }
+}
