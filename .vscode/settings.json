@@ -1,5 +1,6 @@
 {
-  "scssLint.showHighlights": true,
+  // sass-lint 검사 하이라이팅 표현 여부
+  "scssLint.showHighlights": false,
   // .scss 파일 변경 시 scss-lint 자동 실행 여부
   "scssLint.runOnTextChange": true,
   // scss-lint 적용 언어 지정
