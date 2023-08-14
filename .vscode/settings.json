@@ -8,5 +8,5 @@
   // VSCode 상태 표시줄 표시 텍스트 지정(${errors.length}: 발견된 에러 개수, $(x): 아이콘)
   "scssLint.statusBarText": "`$(telescope) scss-lint ${errors.length} $(x)`",
   // scss-lint 적용 디렉토리 위치(현 디렉토리)
-  "scssLint.configDir": "."
+  "scssLint.configDir": ""
 }

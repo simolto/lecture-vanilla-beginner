@@ -11,237 +11,238 @@ severity: warning
 # 린터 및 설정 목록
 # 예) 'BorderZero' 린터는 ~를 검사(확인)하며, ~옵션 설정을 적용(또는 무시)합니다.
 
-# 값이 0인 테두리 검사, "none" 대신 "0"을 사용하는 규칙 적용
-BorderZero:
-  enabled: true
-  convention: zero
+linters:
+  # 값이 0인 테두리 검사, "none" 대신 "0"을 사용하는 규칙 적용
+  BorderZero:
+    enabled: true
+    convention: zero
 
-# 색상 값에 키워드 사용 여부 검사
-ColorKeyword:
-  enabled: true
+  # 색상 값에 키워드 사용 여부 검사
+  ColorKeyword:
+    enabled: true
 
-# 색상 값을 변수 대신 사용 여부 검사
-ColorVariable:
-  enabled: false
+  # 색상 값을 변수 대신 사용 여부 검사
+  ColorVariable:
+    enabled: false
 
-# 주석 스타일 검사, silent 스타일 무시
-Comment:
-  enabled: false
-  style: silent
+  # 주석 스타일 검사, silent 스타일 무시
+  Comment:
+    enabled: false
+    style: silent
 
-# 속성 선언 순서 검사
-DeclarationOrder:
-  enabled: false
+  # 속성 선언 순서 검사
+  DeclarationOrder:
+    enabled: false
 
-# 린터 비활성화 이유 검사
-DisableLinterReason:
-  enabled: false
+  # 린터 비활성화 이유 검사
+  DisableLinterReason:
+    enabled: false
 
-# 중복된 속성 검사
-DuplicateProperty:
-  enabled: true
+  # 중복된 속성 검사
+  DuplicateProperty:
+    enabled: true
 
-# 블록 간 빈 줄 검사, 단일 줄 블록 무시
-EmptyLineBetweenBlocks:
-  enabled: true
-  ignore_single_line_blocks: true
+  # 블록 간 빈 줄 검사, 단일 줄 블록 무시
+  EmptyLineBetweenBlocks:
+    enabled: true
+    ignore_single_line_blocks: true
 
-# 빈 규칙 검사
-EmptyRule:
-  enabled: true
+  # 빈 규칙 검사
+  EmptyRule:
+    enabled: true
 
-# @extend 지시자 사용 검사
-ExtendDirective:
-  enabled: false
+  # @extend 지시자 사용 검사
+  ExtendDirective:
+    enabled: false
 
-# 파일 마지막 빈 줄 있는지 검사
-FinalNewline:
-  enabled: true
-  present: true
+  # 파일 마지막 빈 줄 있는지 검사
+  FinalNewline:
+    enabled: true
+    present: true
 
-# 16진수 색상 값의 길이 검사, short 스타일 권장 설정 적용
-HexLength:
-  enabled: true
-  style: short
+  # 16진수 색상 값의 길이 검사, short 스타일 권장 설정 적용
+  HexLength:
+    enabled: true
+    style: short
 
-# 16진수 색상 값을 소문자로 사용하는 것 검사
-HexNotation:
-  enabled: true
-  style: lowercase
+  # 16진수 색상 값을 소문자로 사용하는 것 검사
+  HexNotation:
+    enabled: true
+    style: lowercase
 
-# 유효한 16진수 색상 값 검사
-HexValidation:
-  enabled: true
+  # 유효한 16진수 색상 값 검사
+  HexValidation:
+    enabled: true
 
-# ID 선택자 사용 검사
-IdSelector:
-  enabled: false
+  # ID 선택자 사용 검사
+  IdSelector:
+    enabled: false
 
-# !important 규칙 사용 검사
-ImportantRule:
-  enabled: false
+  # !important 규칙 사용 검사
+  ImportantRule:
+    enabled: false
 
-# import 경로 검사, leading_underscore와 filename_extension 설정 적용
-ImportPath:
-  enabled: true
-  leading_underscore: false
-  filename_extension: false
+  # import 경로 검사, leading_underscore와 filename_extension 설정 적용
+  ImportPath:
+    enabled: true
+    leading_underscore: false
+    filename_extension: false
 
-# 들여쓰기 검사, space와 width 설정 적용
-Indentation:
-  enabled: true
-  allow_non_nested_indentation: false
-  character: space
-  width: 2
+  # 들여쓰기 검사, space와 width 설정 적용
+  Indentation:
+    enabled: true
+    allow_non_nested_indentation: false
+    character: space
+    width: 2
 
-# 소수점 앞 0 검사, include_zero 스타일 권장 설정 적용
-LeadingZero:
-  enabled: true
-  style: include_zero
+  # 소수점 앞 0 검사, include_zero 스타일 권장 설정 적용
+  LeadingZero:
+    enabled: true
+    style: include_zero
 
-# 병합 가능한 선택자 검사, 중첩 사용 강제 설정 적용
-MergeableSelector:
-  enabled: true
-  force_nesting: true
+  # 병합 가능한 선택자 검사, 중첩 사용 강제 설정 적용
+  MergeableSelector:
+    enabled: true
+    force_nesting: true
 
-# 중첩 깊이 검사, 최대 깊이와 부모 선택자 무시 설정 적용
-NestingDepth:
-  enabled: true
-  max_depth: 6
-  ignore_parent_selectors: false
+  # 중첩 깊이 검사, 최대 깊이와 부모 선택자 무시 설정 적용
+  NestingDepth:
+    enabled: true
+    max_depth: 6
+    ignore_parent_selectors: false
 
-# @extend 지시자 내부 Placeholder 사용 검사
-PlaceholderInExtend:
-  enabled: true
+  # @extend 지시자 내부 Placeholder 사용 검사
+  PlaceholderInExtend:
+    enabled: true
 
-# 프라이빗 이름 규칙 검사, 접두사 설정 적용
-PrivateNamingConvention:
-  enabled: false
-  prefix: _
+  # 프라이빗 이름 규칙 검사, 접두사 설정 적용
+  PrivateNamingConvention:
+    enabled: false
+    prefix: _
 
-# 속성 정렬 순서 검사, order, ignore_unspecified, min_properties, separate_groups 설정 적용
-PropertySortOrder:
-  enabled: true
-  order: recess
-  ignore_unspecified: false
-  min_properties: 2
-  separate_groups: false
+  # 속성 정렬 순서 검사, order, ignore_unspecified, min_properties, separate_groups 설정 적용
+  PropertySortOrder:
+    enabled: true
+    order: recess
+    ignore_unspecified: false
+    min_properties: 2
+    separate_groups: false
 
-# 속성 이름 철자 검사, 추가 속성 및 비활성 속성 설정 적용
-PropertySpelling:
-  enabled: true
-  extra_properties: []
-  disabled_properties: []
+  # 속성 이름 철자 검사, 추가 속성 및 비활성 속성 설정 적용
+  PropertySpelling:
+    enabled: true
+    extra_properties: []
+    disabled_properties: []
 
-# 의사 요소 사용 검사
-PseudoElement:
-  enabled: true
+  # 의사 요소 사용 검사
+  PseudoElement:
+    enabled: true
 
-# 요소의 한정자 사용 검사
-QualifyingElement:
-  enabled: true
-  allow_element_with_attribute: false
-  allow_element_with_class: false
-  allow_element_with_id: false
+  # 요소의 한정자 사용 검사
+  QualifyingElement:
+    enabled: true
+    allow_element_with_attribute: false
+    allow_element_with_class: false
+    allow_element_with_id: false
 
-# 선택자 중첩 깊이 검사
-SelectorDepth:
-  enabled: true
-  max_depth: 6
+  # 선택자 중첩 깊이 검사
+  SelectorDepth:
+    enabled: true
+    max_depth: 6
 
-# 선택자 형식 검사
-SelectorFormat:
-  enabled: false
+  # 선택자 형식 검사
+  SelectorFormat:
+    enabled: false
 
-# 축약 표기 검사
-Shorthand:
-  enabled: false
-  allowed_shorthands: [1, 2, 3, 4]
+  # 축약 표기 검사
+  Shorthand:
+    enabled: false
+    allowed_shorthands: [1, 2, 3, 4]
 
-# 속성 별 한 줄씩 작성 검사
-SingleLinePerProperty:
-  enabled: true
-  allow_single_line_rule_sets: true
+  # 속성 별 한 줄씩 작성 검사
+  SingleLinePerProperty:
+    enabled: true
+    allow_single_line_rule_sets: true
 
-# 선택자 한 줄 작성 검사
-SingleLinePerSelector:
-  enabled: true
+  # 선택자 한 줄 작성 검사
+  SingleLinePerSelector:
+    enabled: true
 
-# 쉼표 뒤 공백 검사
-SpaceAfterComma:
-  enabled: true
-  style: one_space
+  # 쉼표 뒤 공백 검사
+  SpaceAfterComma:
+    enabled: true
+    style: one_space
 
-# 주석 뒤 공백 검사
-SpaceAfterComment:
-  enabled: false
-  style: one_space
+  # 주석 뒤 공백 검사
+  SpaceAfterComment:
+    enabled: false
+    style: one_space
 
-# 속성 이름 뒤 공백 검사
-SpaceAfterPropertyName:
-  enabled: true
+  # 속성 이름 뒤 공백 검사
+  SpaceAfterPropertyName:
+    enabled: true
 
-# 변수 이름 뒤 공백 검사
-SpaceAfterVariableName:
-  enabled: true
+  # 변수 이름 뒤 공백 검사
+  SpaceAfterVariableName:
+    enabled: true
 
-# 연산자 주변 공백 검사
-SpaceAroundOperator:
-  enabled: true
-  style: one_space
+  # 연산자 주변 공백 검사
+  SpaceAroundOperator:
+    enabled: true
+    style: one_space
 
-# 중괄호 앞 공백 검사
-SpaceBeforeBrace:
-  enabled: true
-  style: space
-  allow_single_line_padding: false
+  # 중괄호 앞 공백 검사
+  SpaceBeforeBrace:
+    enabled: true
+    style: space
+    allow_single_line_padding: false
 
-# 린터는 괄호 사이 공백 검사
-SpaceBetweenParens:
-  enabled: true
-  spaces: 0
+  # 린터는 괄호 사이 공백 검사
+  SpaceBetweenParens:
+    enabled: true
+    spaces: 0
 
-# 문자열 따옴표 스타일 검사
-StringQuotes:
-  enabled: true
-  style: single_quotes
+  # 문자열 따옴표 스타일 검사
+  StringQuotes:
+    enabled: true
+    style: single_quotes
 
-# 끝 불필요 세미콜론 검사
-TrailingSemicolon:
-  enabled: true
+  # 끝 불필요 세미콜론 검사
+  TrailingSemicolon:
+    enabled: true
 
-# 끝 공백 검사
-TrailingWhitespace:
-  enabled: true
+  # 끝 공백 검사
+  TrailingWhitespace:
+    enabled: true
 
-# 불필요 0 검사
-TrailingZero:
-  enabled: false
+  # 불필요 0 검사
+  TrailingZero:
+    enabled: false
 
-# 불필요 부모 참조 검사
-UnnecessaryParentReference:
-  enabled: true
+  # 불필요 부모 참조 검사
+  UnnecessaryParentReference:
+    enabled: true
 
-# URL 형식 검사
-UrlFormat:
-  enabled: true
+  # URL 형식 검사
+  UrlFormat:
+    enabled: true
 
-# URL 따옴표 스타일 검사
-UrlQuotes:
-  enabled: true
+  # URL 따옴표 스타일 검사
+  UrlQuotes:
+    enabled: true
 
-# 속성 변수 사용 검사
-VariableForProperty:
-  enabled: false
-  properties: []
+  # 속성 변수 사용 검사
+  VariableForProperty:
+    enabled: false
+    properties: []
 
-# 벤더 접두사 사용 검사
-VendorPrefix:
-  enabled: true
-  identifier_list: base
-  additional_identifiers: []
-  excluded_identifiers: []
+  # 벤더 접두사 사용 검사
+  VendorPrefix:
+    enabled: true
+    identifier_list: base
+    additional_identifiers: []
+    excluded_identifiers: []
 
-# 0 단위 검사
-ZeroUnit:
-  enabled: true
+  # 0 단위 검사
+  ZeroUnit:
+    enabled: true
